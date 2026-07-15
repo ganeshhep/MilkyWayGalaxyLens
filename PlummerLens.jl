@@ -1,13 +1,6 @@
 module PlummerLens
 
-using StaticArrays
-
 export Deflections, Jacobians, Vc
-
-# Plummer potential ψ(θ1, θ2) for bulge of the Milky Way galaxy
-# the parameter (dimensionless) mp is, mp = Mp/(π * Σcr * ξ0^2)
-# Mp is the mass of the bulge in units of MSun
-# the parameter (dimensionless) a0 in units of ξ0, a0 = a/ξ0
 
 function Deflections(m, a0, θ1, θ2, d)
     θ = sqrt(θ1^2 + θ2^2)
@@ -43,9 +36,6 @@ function Jacobians(m, a0, θ1, θ2, d)
 end
 
 function Vc(G, M, a, r)
-    # function to compute the circular velocity Vc for the Plummer model
-    # M is the mass of the bulge in units of MSun, a is the scale radius of the bulge in kpc and r is the radial distance from the center of the bulge in kpc
-
     Vc2 = G * M * r^2/(a^2 + r^2)^1.5
     Vc = sqrt(Vc2)
 
