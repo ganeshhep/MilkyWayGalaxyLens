@@ -1,0 +1,67 @@
+Cosmology :
+  H0: 70.0
+  Omegam0: 0.3
+  Omegar0: 0.0
+  Omegaw0: 0.7
+
+Redshift :
+  source : 1.5
+  lens : 0.4
+
+Lenses :
+  Model 1 :
+    Hernquist Bulge :
+      M : 3.4e10 # in units of MSun
+      r0 : 0.7 # in units of kpc
+
+    Miyamoto Nagai Disk :
+      M : 1.0e11 # in units of MSun
+      A : 6.5 # in units of kpc
+      B : 0.26 # in units of kpc
+
+    Cored Isothermal Halo :
+      M : 5.0e10 # in units of MSun
+      rc : 6.0 # in units of kpc
+
+  Model 2 :
+    Plummer Bulge :
+      M : 1067.2e7 # in units of MSun
+      a : 0.3 # in units of kpc
+
+    Miyamoto Nagai Thin Disk : 
+      M : 3944.0e7 # in units of MSun
+      A : 5.3 # in units of kpc
+      B : 0.25 # in units of kpc
+
+    Miyamoto Nagai Thick Disk :
+      M : 3944.0e7 # in units of MSun
+      A : 2.6 # in units of kpc
+      B : 0.8 # in units of kpc
+
+    NFW Halo : 
+      r200 : 183.0 # in units of kpc
+      c : 14.5 # in units of kpc
+
+  Model 3 :
+    # the bulge and the dark halo components are the same as that in the model 2, hence these parameters are taken from model 2.
+    Exponential Thin Disk :
+      Rd : 2.6 # in units of kpc
+      zd : 0.3 # in units of kpc
+
+    Exponential Thick Disk :
+      Rd : 3.6 # in units of kpc
+      zd : 0.9 # in units of kpc
+
+Source :
+  coordinates : [0.0, 0.0] # the source coordinates in units of arcseconds 
+      
+Grid :
+  N : 2048 # number of grid points for model 1 and model 2
+  thetaMin : -4.0 # in units of arcseconds
+  thetaMax : 4.0 # in units of arcseconds
+  Nr : 1024 # number of radial points for the rotation curve
+  rMin : 0.0 # in units of kpc
+  rMax : 30.0 # in units of kpc
+  Nd : 2048 # number of grid points for inclined disk model
+  thetadMin : -2.0 # in units of arcseconds
+  thetadMax : 2.0 # in units of arcseconds 
