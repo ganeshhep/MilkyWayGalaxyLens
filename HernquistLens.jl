@@ -1,12 +1,5 @@
 module HernquistLens
 
-using StaticArrays
-
-# Hernquist model for the bulges in the spiral galaxies
-# Hernquist bulge potential, ψ(θ1, θ2) 
-# the parameter mb (dimensionless) is, mb = Mb/(π * Σcr * ξ0^2)
-# Mb is the mass of the bulge in units of MSun
-
 export Deflections, Jacobians, Vc
 
 function χ(θ)
@@ -55,9 +48,6 @@ function Jacobians(m, ξ0, θ1, θ2, d)
 end
 
 function Vc(G, M, r0, r)
-    # function to compute the circular velocity Vc for the Hernquist bulge model
-    # M is the mass of the bulge in units of MSun, r0 is the scale radius of the bulge in kpc and r is the radial distance from the center of the bulge in kpc
-
     Vc2 = G * M * r/(r + r0)^2
     Vc = sqrt(Vc2)
 
