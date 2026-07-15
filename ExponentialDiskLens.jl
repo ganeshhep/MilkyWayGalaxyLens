@@ -1,7 +1,6 @@
 module ExponentialDiskLens
 
 using QuadGK
-using StaticArrays
 using SpecialFunctions: besseli, besselk
 
 export DeflecsJacobs, Vc
