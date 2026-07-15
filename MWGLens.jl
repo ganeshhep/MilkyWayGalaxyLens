@@ -148,7 +148,7 @@ axCrit1.title = "Milky Way Galaxy Lens (Model 1) : Critical Curves"
 axCaus1.title = "Milky Way Galaxy Lens (Model 1) : Caustic Curves"
 
 # image positions
-θ1Img1, θ2Img1 = LensUtils.Images(θMin, θMax, N, α1, β)
+θ1Img1, θ2Img1 = LensUtils.Images(θMin, θMax, N, α1, β, d1)
 
 # circualr velocities
 Vcb1 = @. HernquistLens.Vc(G, Mb1, r0, r)
@@ -223,7 +223,7 @@ axCrit2.title = "Milky Way Galaxy Lens (Model 2) : Critical Curves"
 axCaus2.title = "Milky Way Galaxy Lens (Model 2) : Caustic Curves"
 
 # image positions
-θ1Img2, θ2Img2 = LensUtils.Images(θMin, θMax, N, α2, β)
+θ1Img2, θ2Img2 = LensUtils.Images(θMin, θMax, N, α2, β, d2)
 
 # circualr velocities
 Vcb2 = @. PlummerLens.Vc(G, Mb2, a, r)
@@ -298,7 +298,7 @@ axCrit3.title = "Milky Way Galaxy Lens (Model 3, axis ratio = $qMintrunc) : Crit
 axCaus3.title = "Milky Way Galaxy Lens (Model 3, axis ratio = $qMintrunc) : Caustic Curves"
 
 # image positions
-θ1Img3, θ2Img3 = LensUtils.Images(θdMin, θdMax, Nd, α3, β)
+θ1Img3, θ2Img3 = LensUtils.Images(θdMin, θdMax, Nd, α3, β, d3)
 
 # circular velocities
 Vctd3 = @. ExponentialDiskLens.Vc(G, Σ0td, ξdt, r)
