@@ -1,13 +1,6 @@
 module NFWLens
 
-using StaticArrays
-
 export Deflections, Jacobians, Vc
-
-# NFW potential ψ(θ1, θ2) for the halo of the Milky Way galaxy
-# the parameter (dimensionless) ks is, ks = ρs * rs/Σcr
-# ρs is the characteristic density of the halo in units of MSun/kpc^3, rs is the scale radius of the halo in kpc
-# ρs = Mc/(4π * rs^3 * (log(1.0 + λ) - λ/(1.0 + λ))), where Mc is the mass of the halo in units of MSun, λ = ξ0/rs
 
 function χ(θ)
     if θ > 1.0
@@ -54,9 +47,6 @@ function Jacobians(κs, θ1, θ2, d)
 end
 
 function Vc(G, M, rs, r)
-    # function to compute the circular velocity Vc for the NFW halo model
-    # M is the mass of the halo in units of MSun, rs is the scale radius of the halo in kpc and r is the radial distance from the center of the halo in kpc
-
     Vc2 = G * M/r * (log(1.0 + r/rs) - (r/rs)/(1.0 + r/rs))
     Vc = sqrt(Vc2)
 
