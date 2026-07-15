@@ -179,7 +179,7 @@ end
     return maximum.(eachrow(hcat(x[1:end - 1, :], x[2:end, :])))
 end
 
-function Images(θMin, θMax, N, α, βSrc)
+function Images(θMin, θMax, N, α, βSrc, d)
     # The function returns the image positions for a given source position βSrc in a N-sized grid with limits θMin and θMax, and with deflection angles α1 and α2. 
     # The function uses contour plotting to find the intersection points of the curves defined by the lens equation.
 
@@ -189,8 +189,8 @@ function Images(θMin, θMax, N, α, βSrc)
     β1Src = βSrc[1]
     β2Src = βSrc[2]
 
-    α1 = α[1]
-    α2 = α[2]
+    α1 = d^2 * α[1]
+    α2 = d^2 * α[2]
 
     cont1 = @. θ1 - α1 - β1Src
     cont2 = @. θ2 - α2 - β2Src
