@@ -1,15 +1,6 @@
 module CoredHaloLens
 
-using StaticArrays
-
 export Deflections, Jacobians, Vc
-
-# cored isothermal halo potential ψ(θ1, θ2) for the halo component of the Milky Way galaxy
-# the parameter (dimensionless) ρh is, ρh = ρc * (πrc/Σcr)
-# ρc is the core density of the halo in units of MSun/kpc^3, rc is the core radius of the halo in kpc
-# ρc = Mc/(4π * rc^3), where Mc is the mass of the halo in units of MSun
-# the parameter λ (dimensionless) is, λ = ξ0/rc
-
 
 function Deflections(ρh, λ, θ1, θ2, d)
     θ = sqrt(θ1^2 + θ2^2)
@@ -45,9 +36,6 @@ function Jacobians(ρh, λ, θ1, θ2, d)
 end
 
 function Vc(G, M, rc, r)
-    # function to compute the circular velocity Vc for the cored isothermal halo model
-    # M is the mass of the halo in units of MSun, rc is the core radius of the halo in kpc and r is the radial distance from the center of the halo in kpc
-
     if r == 0.0
         Vc2 = 0.0
 
